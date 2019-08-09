@@ -3,14 +3,18 @@ import { Form, Field, withFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
 
-const RegForm = ({ values, errors, touched, status }) => {
-  const [users, setUsers] = useState([]);
-
-  useEffect(() => {
-    if (status) {
-      setUsers([...users, status]);
-    }
-  }, [status]);
+const RegForm = (props) => {
+  // console.log(props)
+  const { values, errors, touched, status } = props
+  
+  // const [users, setUsers] = useState([]);
+ 
+  
+  // useEffect(() => {
+  //   if (status) {
+  //     setUsers([...users, status]);
+  //   }
+  // }, [status]);
 
   return (
     <>
@@ -52,10 +56,13 @@ const FormikRegForm = withFormik({
   }),
 
   handleSubmit: (values, { resetForm, setStatus }) => {
+    // console.log(values)
     axios
-      .post(`http://localhost:5000/api/register`, values)
+      .post("http://localhost:5000/api/register", values)
       .then(res => {
-        console.log(res);
+        console.log(res.data)
+        setStatus(res.data)
+        
         resetForm();
       })
       .catch(err => console.log(err));
