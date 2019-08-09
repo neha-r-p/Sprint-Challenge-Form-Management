@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Form, Field, withFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
 
-const RegForm = ({ errors, touched }) => {
+const RegForm = ({ values, errors, touched, status }) => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    if (status) {
+      setUsers([...users, status]);
+    }
+  }, [status]);
+
   return (
     <>
       <Form>
@@ -43,7 +51,7 @@ const FormikRegForm = withFormik({
       .required("Password is required")
   }),
 
-  handleSubmit: (values, { resetForm }) => {
+  handleSubmit: (values, { resetForm, setStatus }) => {
     axios
       .post(`http://localhost:5000/api/register`, values)
       .then(res => {
