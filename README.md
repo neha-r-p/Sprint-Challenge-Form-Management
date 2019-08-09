@@ -26,9 +26,15 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] What are the required parts of class components?
 
+    Declaring the class component and extending React base class, using a constructor function and calling super(), calling render() to be able to return JSX and render to DOM
+
 - [ ] Name at least three lifecycle methods?
 
+    render, componentDidMount, componentDidUpdate
+
 - [ ] Why are forms used so often in web applications and software?
+
+    
 
 - [ ] What advantages are there by using a forms library like Formik?
 
