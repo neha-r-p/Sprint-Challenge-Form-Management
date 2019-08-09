@@ -1,7 +1,9 @@
 import React from "react";
 import { Form, Field, withFormik } from "formik";
+import * as yup from 'yup';
 
-const RegForm = () => {
+const RegForm = (props) => {
+    console.log(props)
   return (
     <>
       <Form>
@@ -15,11 +17,14 @@ const RegForm = () => {
 
 const FormikRegForm = withFormik({
   mapPropsToValues: ({ username, password }) => {
-      return {
-          username: username || '',
-          password: password || ''
-      }
-  }
+    return {
+      username: username || "",
+      password: password || ""
+    };
+  },
+
+  validationSchema: yup,
+
 })(RegForm);
 
 export default FormikRegForm;
