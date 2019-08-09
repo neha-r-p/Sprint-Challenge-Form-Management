@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import axios from "axios";
 import FormikRegForm from "./components/RegForm";
+import { Card } from 'semantic-ui-react';
 
 class App extends React.Component {
   constructor() {
@@ -34,10 +35,10 @@ class App extends React.Component {
         <div className="getRequest">
           {this.state.meals.map(meal => {
             return (
-              <div>
+              <Card>
                 <h2>{meal.name}</h2>
                 <p>Course: {meal.course}</p>
-              </div>
+              </Card>
             );
           })}
         </div>

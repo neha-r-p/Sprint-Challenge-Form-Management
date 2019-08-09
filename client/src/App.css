@@ -23,3 +23,28 @@ button {
   height: 45px;
   border-radius: 15px;
 }
+
+.getRequest {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  height: 150px;
+  margin: 30px;
+  border: 1px solid purple;
+  box-shadow: 0px 2px 3px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.error {
+  font-size: 14px;
+  color: maroon;
+  margin-top: 0;
+}
+
+label>h2 {
+  margin-bottom: 0;
+}

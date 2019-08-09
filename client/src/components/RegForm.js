@@ -3,13 +3,12 @@ import { Form, Field, withFormik } from "formik";
 import * as yup from "yup";
 import axios from "axios";
 
-const RegForm = (props) => {
+const RegForm = props => {
   // console.log(props)
-  const { values, errors, touched, status } = props
-  
+  const { values, errors, touched, status } = props;
+
   // const [users, setUsers] = useState([]);
- 
-  
+
   // useEffect(() => {
   //   if (status) {
   //     setUsers([...users, status]);
@@ -20,14 +19,14 @@ const RegForm = (props) => {
     <>
       <Form>
         <label>
-          Username:
-          <br /> <Field type="text" name="username" placeholder="Username" />
+          <h2>Username:</h2>
+          <Field type="text" name="username" placeholder="Username" />
         </label>
         {touched.username && errors.username && (
           <p className="error">{errors.username}</p>
         )}
         <label>
-          Password: <br />
+          <h2>Password:</h2>
           <Field type="password" name="password" placeholder="Password" />
         </label>
         {touched.password && errors.password && (
@@ -60,9 +59,9 @@ const FormikRegForm = withFormik({
     axios
       .post("http://localhost:5000/api/register", values)
       .then(res => {
-        console.log(res.data)
-        setStatus(res.data)
-        
+        console.log(res.data);
+        setStatus(res.data);
+
         resetForm();
       })
       .catch(err => console.log(err));
