@@ -2,13 +2,18 @@ import React from "react";
 import { Form, Field, withFormik } from "formik";
 import * as yup from "yup";
 
-const RegForm = props => {
-  console.log(props);
+const RegForm = ({ errors, touched }) => {
   return (
     <>
       <Form>
         <Field type="text" name="username" placeholder="Username" />
+        {touched.username && errors.username && (
+          <p className="error">{errors.username}</p>
+        )}
         <Field type="password" name="password" placeholder="Password" />
+        {touched.password && errors.password && (
+          <p className="error">{errors.password}</p>
+        )}
         <button type="submit">Submit</button>
       </Form>
     </>
