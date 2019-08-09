@@ -1,9 +1,9 @@
 import React from "react";
 import { Form, Field, withFormik } from "formik";
-import * as yup from 'yup';
+import * as yup from "yup";
 
-const RegForm = (props) => {
-    console.log(props)
+const RegForm = props => {
+  console.log(props);
   return (
     <>
       <Form>
@@ -23,8 +23,13 @@ const FormikRegForm = withFormik({
     };
   },
 
-  validationSchema: yup,
-
+  validationSchema: yup.object().shape({
+    username: yup.string().required("Username is required."),
+    password: yup
+      .string()
+      .min(6, "Password must be at least 6 characters long")
+      .required("Password is required")
+  })
 })(RegForm);
 
 export default FormikRegForm;
