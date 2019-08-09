@@ -34,11 +34,15 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ] Why are forms used so often in web applications and software?
 
-    
+    To collect data from users
 
 - [ ] What advantages are there by using a forms library like Formik?
 
+    These libraries abstract away complexity from creating forms (eg handling state and submit).
+
 - [ ] Why do we write tests for our apps?
+
+    To make sure the app works as it should (rendering, functionality), and to debug the smaller components so you don't have to fight a giant cockroach boss villain in the future, which will save time
 
 ## Project Set Up
 
