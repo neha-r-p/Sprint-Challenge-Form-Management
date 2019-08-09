@@ -9,6 +9,12 @@ describe("<FormikRegForm />", () => {
   });
   it("submit button click", () => {
     const { getByText } = render(<FormikRegForm />);
-    const submitBtn = getByText(/submit/i)
+    fireEvent(
+      getByText("Submit"),
+      new MouseEvent("click")
+    );
+    // const submitBtn = getByText(/submit/i);
+    // fireEvent.click(submitBtn);
+    // expect(clicked).toBe(true)
   });
 });
