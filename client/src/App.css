@@ -1,0 +1,56 @@
+.App {
+  text-align: center;
+}
+
+form {
+  width: 80%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  padding:10px 0;
+  border: 1px solid purple;
+  box-shadow: 0px 2px 3px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+input {
+  margin:10px 0;
+  height: 30px;
+  font-size: 20px;
+}
+
+button {
+  width: 100px;
+  font-size: 20px;
+  margin:10px auto;
+  height: 45px;
+  border-radius: 15px;
+}
+
+.getRequest {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 300px;
+  height: 150px;
+  margin: 30px;
+  border: 1px solid purple;
+  box-shadow: 0px 2px 3px;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+
+.error {
+  font-size: 14px;
+  color: maroon;
+  margin-top: 0;
+}
+
+label>h2 {
+  margin-bottom: 0;
+}
